@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Técnicas Culinárias - Sabores do Mundo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        nav {
+            background-color: #2c3e50;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #34495e;
+        }
+
+        nav a.active {
+            background-color: #667eea;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            min-height: 60vh;
+        }
+
+        .page-title {
+            text-align: center;
+            color: #667eea;
+            margin: 2rem 0;
+            font-size: 2.5rem;
+        }
+
+        .intro-text {
+            text-align: center;
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tecnicas-container {
+            display: grid;
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .tecnica-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            transition: transform 0.3s;
+        }
+
+        .tecnica-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .tecnica-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tecnica-content {
+            padding: 2rem;
+        }
+
+        .tecnica-content h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+
+        .nivel {
+            display: inline-block;
+            background-color: #764ba2;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .tecnica-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .dicas {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-left: 4px solid #667eea;
+            margin-top: 1rem;
+            border-radius: 5px;
+        }
+
+        .dicas strong {
+            color: #667eea;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background-color: #34495e;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .tecnica-item {
+                grid-template-columns: 1fr;
+            }
+            
+            .tecnica-item img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🍽️ Sabores do Mundo</h1>
+        <p>Explorando a culinária mundial, uma receita por vez</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="receitas.html">Receitas Internacionais</a></li>
+            <li><a href="tecnicas.html" class="active">Técnicas Culinárias</a></li>
+            <li><a href="ingredientes.html">Ingredientes Especiais</a></li>
+            <li><a href="contatos.html">Contatos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2 class="page-title">Técnicas Culinárias</h2>
+        <p class="intro-text">
+            Domine as técnicas fundamentais e avançadas da cozinha profissional. 
+            Cada técnica foi cuidadosamente explicada para que você possa aplicar 
+            em suas receitas e elevar o nível dos seus pratos.
+        </p>
+
+        <div class="tecnicas-container">
+            <div class="tecnica-item">
+                <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=400&fit=crop" alt="Técnica de Cortes">
+                <div class="tecnica-content">
+                    <span class="nivel">⭐ Iniciante</span>
+                    <h3>Técnicas de Corte Profissionais</h3>
+                    <p>
+                        Dominar os cortes básicos é fundamental para qualquer cozinheiro. 
+                        Os cortes mais importantes incluem brunoise (cubos pequenos), 
+                        julienne (palitos finos), mirepoix (cubos médios) e chiffonade 
+                        (tiras finas de folhas).
+                    </p>
+                    <p>
+                        A uniformidade dos cortes não é apenas estética: garante que 
+                        todos os ingredientes cozinhem no mesmo tempo, resultando em 
+                        texturas e sabores equilibrados.
+                    </p>
+                    <div class="dicas">
+                        <strong>💡 Dica Pro:</strong> Mantenha sempre sua faca bem afiada. 
+                        Uma faca cega é mais perigosa e dificulta o trabalho. Use a técnica 
+                        da garra para proteger os dedos enquanto corta.
+                    </div>
+                </div>
+            </div>
+
+            <div class="tecnica-item">
+                <img src="images/sousvide.jpg" alt="Sous Vide">
+                <div class="tecnica-content">
+                    <span class="nivel">⭐⭐⭐ Avançado</span>
+                    <h3>Sous Vide - Cozimento a Vácuo</h3>
+                    <p>
+                        Técnica francesa que consiste em cozinhar alimentos selados a vácuo 
+                        em banho-maria com temperatura controlada. Permite um controle 
+                        preciso do ponto de cozimento e resulta em carnes extremamente 
+                        macias e suculentas.
+                    </p>
+                    <p>
+                        Perfeito para carnes nobres como filé mignon (54°C por 2h), 
+                        salmão (50°C por 30min) e legumes que mantêm textura e nutrientes. 
+                        Após o sous vide, sele rapidamente em fogo alto para criar crosta.
+                    </p>
+                    <div class="dicas">
+                        <strong>💡 Dica Pro:</strong> Adicione manteiga, ervas frescas e 
+                        alho no saco a vácuo para infundir sabores durante o cozimento. 
+                        Sempre seque bem a carne antes de selar para criar crosta perfeita.
+                    </div>
+                </div>
+            </div>
+
+            <div class="tecnica-item">
+                <img src="images/miseenplace.jpg" alt="Mise en Place">
+                <div class="tecnica-content">
+                    <span class="nivel">⭐ Iniciante</span>
+                    <h3>Mise en Place - Organização na Cozinha</h3>
+                    <p>
+                        Expressão francesa que significa "tudo em seu lugar". É a prática 
+                        de preparar e organizar todos os ingredientes e equipamentos antes 
+                        de começar a cozinhar. Fundamental em cozinhas profissionais.
+                    </p>
+                    <p>
+                        Inclui: lavar e cortar todos os vegetais, separar temperos em 
+                        pequenos recipientes, medir líquidos, pré-aquecer o forno e 
+                        ter todos os utensílios à mão. Essa organização evita erros e 
+                        deixa o processo mais fluido.
+                    </p>
+                    <div class="dicas">
+                        <strong>💡 Dica Pro:</strong> Use bowls pequenos para organizar 
+                        ingredientes e leia a receita completa antes de começar. Limpe 
+                        conforme cozinha para manter o espaço organizado.
+                    </div>
+                </div>
+            </div>
+
+            <div class="tecnica-item">
+                <img src="images/fermentação-caseira.jpg" alt="Fermentação">
+                <div class="tecnica-content">
+                    <span class="nivel">⭐⭐ Intermediário</span>
+                    <h3>Fermentação Caseira</h3>
+                    <p>
+                        Técnica milenar que utiliza microrganismos benéficos para 
+                        transformar alimentos, criando novos sabores e aumentando valor 
+                        nutricional. Inclui kimchi, chucrute, kombucha e pães fermentados 
+                        naturalmente.
+                    </p>
+                    <p>
+                        A fermentação láctica é a mais comum: bactérias convertem açúcares 
+                        em ácido lático, preservando o alimento e criando sabores únicos. 
+                        Requer apenas sal, tempo e temperatura ambiente controlada.
+                    </p>
+                    <div class="dicas">
+                        <strong>💡 Dica Pro:</strong> Use 2% de sal em relação ao peso 
+                        dos vegetais. Mantenha tudo submerso na salmoura para evitar mofo. 
+                        Temperatura ideal: 18-22°C. Prove diariamente até atingir acidez desejada.
+                    </div>
+                </div>
+            </div>
+
+            <div class="tecnica-item">
+                <img src="images/caramelização.jpg" alt="Caramelização">
+                <div class="tecnica-content">
+                    <span class="nivel">⭐⭐ Intermediário</span>
+                    <h3>Caramelização e Reação de Maillard</h3>
+                    <p>
+                        Duas reações químicas que desenvolvem sabores complexos através 
+                        do calor. Caramelização ocorre quando açúcares são aquecidos acima 
+                        de 160°C. A reação de Maillard acontece entre aminoácidos e açúcares 
+                        redutores em alimentos proteicos.
+                    </p>
+                    <p>
+                        Essas técnicas criam aquela crosta dourada irresistível em carnes, 
+                        o sabor profundo de cebolas caramelizadas e a complexidade de pães 
+                        bem assados. Temperatura alta e superfície seca são essenciais.
+                    </p>
+                    <div class="dicas">
+                        <strong>💡 Dica Pro:</strong> Seque bem carnes e vegetais antes 
+                        de levar à panela quente. Não mexa constantemente - deixe formar 
+                        crosta. Use fogo médio-alto e panela de ferro ou aço inox.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sabores do Mundo - Blog de Gastronomia</p>
+        <p>Desenvolvido para fins educacionais - AOP2</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+        </div>
+    </footer>
+</body>
+</html>

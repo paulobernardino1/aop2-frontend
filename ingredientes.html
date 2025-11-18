@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredientes Especiais - Sabores do Mundo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        nav {
+            background-color: #2c3e50;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #34495e;
+        }
+
+        nav a.active {
+            background-color: #667eea;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            min-height: 60vh;
+        }
+
+        .page-title {
+            text-align: center;
+            color: #667eea;
+            margin: 2rem 0;
+            font-size: 2.5rem;
+        }
+
+        .intro-text {
+            text-align: center;
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ingredientes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .ingrediente-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .ingrediente-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .ingrediente-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .ingrediente-content {
+            padding: 1.5rem;
+        }
+
+        .ingrediente-content h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.6rem;
+        }
+
+        .origem {
+            display: inline-block;
+            background-color: #764ba2;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .ingrediente-content p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
+        }
+
+        .info-box {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .info-box h4 {
+            color: #667eea;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box p {
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background-color: #34495e;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🍽️ Sabores do Mundo</h1>
+        <p>Explorando a culinária mundial, uma receita por vez</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="receitas.html">Receitas Internacionais</a></li>
+            <li><a href="tecnicas.html">Técnicas Culinárias</a></li>
+            <li><a href="ingredientes.html" class="active">Ingredientes Especiais</a></li>
+            <li><a href="contatos.html">Contatos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2 class="page-title">Ingredientes Especiais</h2>
+        <p class="intro-text">
+            Descubra ingredientes únicos que podem transformar completamente seus pratos. 
+            Aprenda sobre suas origens, usos culinários e onde encontrá-los.
+        </p>
+
+        <div class="ingredientes-grid">
+            <div class="ingrediente-card">
+                <img src="images/açafrao.jpg" alt="Açafrão">
+                <div class="ingrediente-content">
+                    <span class="origem">🌍 Mediterrâneo</span>
+                    <h3>Açafrão (Saffron)</h3>
+                    <p>
+                        O tempero mais caro do mundo, extraído dos estigmas da flor Crocus sativus. 
+                        São necessárias cerca de 150 flores para produzir apenas 1 grama. 
+                        Possui sabor terroso, levemente amargo e aroma floral único.
+                    </p>
+                    <div class="info-box">
+                        <h4>🔸 Usos Culinários:</h4>
+                        <p>Paella espanhola, risoto milanês, bouillabaisse francesa, 
+                        sobremesas persas e chás aromáticos.</p>
+                        <h4 style="margin-top: 0.8rem;">📦 Armazenamento:</h4>
+                        <p>Recipiente hermético, lugar seco e escuro. Validade de 2 anos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ingrediente-card">
+                <img src="images/pastademisso.jpg" alt="Miso">
+                <div class="ingrediente-content">
+                    <span class="origem">🇯🇵 Japão</span>
+                    <h3>Pasta de Miso</h3>
+                    <p>
+                        Pasta fermentada de soja, arroz ou cevada com koji (fungo). 
+                        Fundamental na culinária japonesa, rica em umami e probióticos. 
+                        Variedades: shiro (claro, suave), aka (escuro, intenso).
+                    </p>
+                    <div class="info-box">
+                        <h4>🔸 Usos Culinários:</h4>
+                        <p>Sopa de miso, marinadas, glazes para peixe, molhos de salada, 
+                        bases de caldos e ramen.</p>
+                        <h4 style="margin-top: 0.8rem;">📦 Armazenamento:</h4>
+                        <p>Geladeira após abrir. Não ferva para preservar probióticos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ingrediente-card">
+                <img src="images/trufas.jpg" alt="Trufas">
+                <div class="ingrediente-content">
+                    <span class="origem">🇮🇹 Itália/França</span>
+                    <h3>Trufas Negras e Brancas</h3>
+                    <p>
+                        Fungos subterrâneos raros com aroma intenso e complexo. 
+                        Trufa branca (Alba) é mais cara e aromática. Trufa negra 
+                        (Périgord) tem sabor mais terroso e pode ser cozida.
+                    </p>
+                    <div class="info-box">
+                        <h4>🔸 Usos Culinários:</h4>
+                        <p>Raspadas sobre massas, risotos, ovos, batatas. Óleo de 
+                        trufa para finalização.</p>
+                        <h4 style="margin-top: 0.8rem;">📦 Armazenamento:</h4>
+                        <p>Embrulhadas em papel toalha, pote hermético na geladeira. 
+                        Usar em até 5-7 dias.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ingrediente-card">
+                <img src="https://images.unsplash.com/photo-1582979512210-99b6a53386f9?w=600&h=400&fit=crop" alt="Yuzu">
+                <div class="ingrediente-content">
+                    <span class="origem">🇯🇵 Japão</span>
+                    <h3>Yuzu (Cítrico Japonês)</h3>
+                    <p>
+                        Cítrico aromático com sabor entre limão, tangerina e toranja. 
+                        Usado mais pela casca e suco. Muito popular na culinária japonesa 
+                        e cada vez mais na gastronomia ocidental moderna.
+                    </p>
+                    <div class="info-box">
+                        <h4>🔸 Usos Culinários:</h4>
+                        <p>Ponzu (molho), sobremesas, coquetéis, marinadas de peixe, 
+                        dressings e aromatização de óleos.</p>
+                        <h4 style="margin-top: 0.8rem;">📦 Armazenamento:</h4>
+                        <p>Fruta fresca: geladeira por 2 semanas. Suco e casca podem 
+                        ser congelados.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ingrediente-card">
+                <img src="images/ghee.jpg" alt="Ghee">
+                <div class="ingrediente-content">
+                    <span class="origem">🇮🇳 Índia</span>
+                    <h3>Ghee (Manteiga Clarificada)</h3>
+                    <p>
+                        Manteiga purificada onde são removidos água e sólidos lácteos. 
+                        Possui ponto de fumaça alto (250°C) e sabor amanteigado intenso. 
+                        Fundamental na culinária indiana e ayurvédica.
+                    </p>
+                    <div class="info-box">
+                        <h4>🔸 Usos Culinários:</h4>
+                        <p>Frituras em alta temperatura, curry, dal, arroz basmati, 
+                        pães naan, sobremesas indianas.</p>
+                        <h4 style="margin-top: 0.8rem;">📦 Armazenamento:</h4>
+                        <p>Temperatura ambiente em pote hermético. Não precisa 
+                        refrigeração. Validade de meses.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ingrediente-card">
+                <img src="images/pimenta.jpg" alt="Pimenta Szechuan">
+                <div class="ingrediente-content">
+                    <span class="origem">🇨🇳 China</span>
+                    <h3>Pimenta Szechuan</h3>
+                    <p>
+                        Não é pimenta verdadeira, mas a casca de um fruto. Causa sensação 
+                        única de formigamento e dormência na língua (má là). 
+                        Essencial na culinária da província de Sichuan.
+                    </p>
+                    <div class="info-box">
+                        <h4>🔸 Usos Culinários:</h4>
+                        <p>Mapo tofu, hot pot chinês, óleo de pimenta, marinadas, 
+                        pratos salteados e misturas de especiarias.</p>
+                        <h4 style="margin-top: 0.8rem;">📦 Armazenamento:</h4>
+                        <p>Torrá-la levemente antes de usar. Guardar em recipiente 
+                        hermético, longe da luz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sabores do Mundo - Blog de Gastronomia</p>
+        <p>Desenvolvido para fins educacionais - AOP2</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+        </div>
+    </footer>
+</body>
+</html>

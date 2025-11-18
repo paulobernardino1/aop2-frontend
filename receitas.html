@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas Internacionais - Sabores do Mundo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        nav {
+            background-color: #2c3e50;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #34495e;
+        }
+
+        nav a.active {
+            background-color: #667eea;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            min-height: 60vh;
+        }
+
+        .page-title {
+            text-align: center;
+            color: #667eea;
+            margin: 2rem 0;
+            font-size: 2.5rem;
+        }
+
+        .intro-text {
+            text-align: center;
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .receitas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .receita-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .receita-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .receita-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .receita-content {
+            padding: 1.5rem;
+        }
+
+        .receita-content h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.6rem;
+        }
+
+        .pais {
+            display: inline-block;
+            background-color: #764ba2;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .receita-content p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .info-receita {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background-color: #34495e;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🍽️ Sabores do Mundo</h1>
+        <p>Explorando a culinária mundial, uma receita por vez</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="receitas.html" class="active">Receitas Internacionais</a></li>
+            <li><a href="tecnicas.html">Técnicas Culinárias</a></li>
+            <li><a href="ingredientes.html">Ingredientes Especiais</a></li>
+            <li><a href="contatos.html">Contatos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2 class="page-title">Receitas Internacionais</h2>
+        <p class="intro-text">
+            Explore sabores autênticos de diferentes países com nossas receitas cuidadosamente 
+            selecionadas. Cada prato conta uma história e traz a cultura de uma nação para sua mesa.
+        </p>
+
+        <div class="receitas-grid">
+            <div class="receita-card">
+                <img src="images/risoto.jpg" alt="Risoto Italiano">
+                <div class="receita-content">
+                    <span class="pais">🇮🇹 Itália</span>
+                    <h3>Risoto de Funghi Porcini</h3>
+                    <p>
+                        Um clássico italiano que combina arroz arbóreo cremoso com cogumelos 
+                        porcini selvagens. O segredo está no caldo quente adicionado aos poucos 
+                        e na manteiga fria no final para dar aquela cremosidade perfeita.
+                    </p>
+                    <div class="info-receita">
+                        <span>⏱️ 40 minutos</span>
+                        <span>👥 4 porções</span>
+                        <span>📊 Médio</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="receita-card">
+                <img src="images/smashburger.jpg" alt="Hambúrguer Gourmet">
+                <div class="receita-content">
+                    <span class="pais">🇺🇸 Estados Unidos</span>
+                    <h3>Smash Burger Clássico</h3>
+                    <p>
+                        O hambúrguer perfeito com carne prensada na chapa bem quente, criando 
+                        aquela crosta irresistível. Servido com queijo cheddar derretido, 
+                        picles, cebola caramelizada e molho especial da casa.
+                    </p>
+                    <div class="info-receita">
+                        <span>⏱️ 25 minutos</span>
+                        <span>👥 2 porções</span>
+                        <span>📊 Fácil</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="receita-card">
+                <img src="images/ramen.jpg" alt="Ramen Japonês">
+                <div class="receita-content">
+                    <span class="pais">🇯🇵 Japão</span>
+                    <h3>Ramen Tonkotsu Tradicional</h3>
+                    <p>
+                        Caldo cremoso de ossos de porco cozido por 12 horas, macarrão fresco, 
+                        chashu (porco marinado), ovo marinado, nori e cebolinha. Uma explosão 
+                        de sabor umami que aquece a alma.
+                    </p>
+                    <div class="info-receita">
+                        <span>⏱️ 14 horas</span>
+                        <span>👥 6 porções</span>
+                        <span>📊 Difícil</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="receita-card">
+                <img src="images/tacos.jpg" alt="Tacos Mexicanos">
+                <div class="receita-content">
+                    <span class="pais">🇲🇽 México</span>
+                    <h3>Tacos al Pastor Autênticos</h3>
+                    <p>
+                        Carne de porco marinada com especiarias e abacaxi, assada em espeto 
+                        vertical. Servida em tortilhas de milho com coentro fresco, cebola 
+                        picada, abacaxi grelhado e salsa verde picante.
+                    </p>
+                    <div class="info-receita">
+                        <span>⏱️ 3 horas</span>
+                        <span>👥 8 porções</span>
+                        <span>📊 Médio</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="receita-card">
+                <img src="images/coq.jpg" alt="Coq au Vin">
+                <div class="receita-content">
+                    <span class="pais">🇫🇷 França</span>
+                    <h3>Coq au Vin da Borgonha</h3>
+                    <p>
+                        Frango braseado lentamente em vinho tinto da Borgonha com cogumelos, 
+                        bacon, cenoura baby e cebolas pérola. Um prato clássico da culinária 
+                        francesa que derrete na boca.
+                    </p>
+                    <div class="info-receita">
+                        <span>⏱️ 2.5 horas</span>
+                        <span>👥 6 porções</span>
+                        <span>📊 Médio</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="receita-card">
+                <img src="images/feijoada.jpg" alt="Feijoada Brasileira">
+                <div class="receita-content">
+                    <span class="pais">🇧🇷 Brasil</span>
+                    <h3>Feijoada Completa Tradicional</h3>
+                    <p>
+                        O prato nacional brasileiro feito com feijão preto e diversos tipos 
+                        de carne suína e bovina. Servida com arroz branco, couve refogada, 
+                        farofa crocante, laranja e vinagrete.
+                    </p>
+                    <div class="info-receita">
+                        <span>⏱️ 4 horas</span>
+                        <span>👥 10 porções</span>
+                        <span>📊 Médio</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sabores do Mundo - Blog de Gastronomia</p>
+        <p>Desenvolvido para fins educacionais - AOP2</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabores do Mundo - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        nav {
+            background-color: #2c3e50;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #34495e;
+        }
+
+        nav a.active {
+            background-color: #667eea;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            min-height: 60vh;
+        }
+
+        .intro {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .intro h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .destaques {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .card a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background-color: #34495e;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🍽️ Sabores do Mundo</h1>
+        <p>Explorando a culinária mundial, uma receita por vez</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="receitas.html">Receitas Internacionais</a></li>
+            <li><a href="tecnicas.html">Técnicas Culinárias</a></li>
+            <li><a href="ingredientes.html">Ingredientes Especiais</a></li>
+            <li><a href="contatos.html">Contatos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="intro">
+            <h2>Bem-vindo ao Sabores do Mundo!</h2>
+            <p>
+                Nosso blog é dedicado aos apaixonados por gastronomia que desejam explorar 
+                sabores de diferentes culturas. Aqui você encontrará receitas autênticas, 
+                técnicas culinárias profissionais e dicas sobre ingredientes especiais que 
+                transformarão suas refeições em experiências inesquecíveis.
+            </p>
+            <p>
+                Seja você um chef experiente ou alguém que está começando na cozinha, 
+                temos conteúdo para todos os níveis. Explore nossas receitas internacionais, 
+                aprenda técnicas que vão elevar seus pratos e descubra ingredientes que 
+                farão toda a diferença na sua culinária.
+            </p>
+            <p>
+                Navegue pelos nossos conteúdos em destaque abaixo e descubra o mundo 
+                através da gastronomia!
+            </p>
+        </section>
+
+        <h2 style="text-align: center; color: #667eea; margin: 2rem 0;">Conteúdos em Destaque</h2>
+
+        <div class="destaques">
+            <div class="card">
+                <a href="receitas.html">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop" alt="Receitas Internacionais">
+                    <div class="card-content">
+                        <h3>Receitas Internacionais</h3>
+                        <p>
+                            Descubra pratos tradicionais da Itália, França, Japão, México e muito mais. 
+                            Receitas passo a passo com ingredientes acessíveis e dicas de apresentação 
+                            para você impressionar seus convidados.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="tecnicas.html">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=400&fit=crop" alt="Técnicas Culinárias">
+                    <div class="card-content">
+                        <h3>Técnicas Culinárias</h3>
+                        <p>
+                            Aprenda técnicas profissionais de cozinha: desde o básico de cortes até 
+                            métodos avançados como sous-vide, fermentação caseira e técnicas de 
+                            confeitaria que vão transformar seus pratos.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="ingredientes.html">
+                    <img src="https://images.unsplash.com/photo-1518843875459-f738682238a6?w=600&h=400&fit=crop" alt="Ingredientes Especiais">
+                    <div class="card-content">
+                        <h3>Ingredientes Especiais</h3>
+                        <p>
+                            Conheça ingredientes exóticos e suas aplicações na culinária moderna. 
+                            Descubra onde encontrar, como armazenar corretamente e como usar 
+                            em suas receitas para criar sabores únicos e memoráveis.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sabores do Mundo - Blog de Gastronomia</p>
+        <p>Desenvolvido para fins educacionais - AOP2</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+        </div>
+    </footer>
+</body>
+</html>

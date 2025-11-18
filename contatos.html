@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos - Sabores do Mundo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        nav {
+            background-color: #2c3e50;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #34495e;
+        }
+
+        nav a.active {
+            background-color: #667eea;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            min-height: 60vh;
+        }
+
+        .page-title {
+            text-align: center;
+            color: #667eea;
+            margin: 2rem 0;
+            font-size: 2.5rem;
+        }
+
+        .intro-text {
+            text-align: center;
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contato-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .contato-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .contato-info h3 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .info-item:hover {
+            transform: translateX(5px);
+            background-color: #e9ecef;
+        }
+
+        .info-item .icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #667eea;
+        }
+
+        .info-item .details h4 {
+            color: #667eea;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-item .details p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .formulario {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .formulario h3 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-enviar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+        }
+
+        .btn-enviar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .redes-sociais {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .redes-sociais h3 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background-color: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .social-btn:hover {
+            background-color: #667eea;
+            transform: translateY(-3px);
+        }
+
+        .social-btn .icon {
+            font-size: 1.3rem;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background-color: #34495e;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .contato-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🍽️ Sabores do Mundo</h1>
+        <p>Explorando a culinária mundial, uma receita por vez</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="receitas.html">Receitas Internacionais</a></li>
+            <li><a href="tecnicas.html">Técnicas Culinárias</a></li>
+            <li><a href="ingredientes.html">Ingredientes Especiais</a></li>
+            <li><a href="contatos.html" class="active">Contatos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2 class="page-title">Entre em Contato</h2>
+        <p class="intro-text">
+            Tem alguma dúvida, sugestão ou gostaria de colaborar com nosso blog? 
+            Estamos sempre abertos a novas ideias e adoramos ouvir nossos leitores!
+        </p>
+
+        <div class="contato-container">
+            <div class="contato-info">
+                <h3>Informações de Contato</h3>
+                
+                <div class="info-item">
+                    <div class="icon">📧</div>
+                    <div class="details">
+                        <h4>Email</h4>
+                        <p>contato@saboresdomungo.com.br</p>
+                        <p style="font-size: 0.85rem; margin-top: 0.3rem; color: #888;">
+                            Respondemos em até 24 horas úteis
+                        </p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon">📱</div>
+                    <div class="details">
+                        <h4>WhatsApp</h4>
+                        <p>(11) 99999-9999</p>
+                        <p style="font-size: 0.85rem; margin-top: 0.3rem; color: #888;">
+                            Segunda a sexta, das 9h às 18h
+                        </p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon">📍</div>
+                    <div class="details">
+                        <h4>Localização</h4>
+                        <p>São Paulo - SP, Brasil</p>
+                        <p style="font-size: 0.85rem; margin-top: 0.3rem; color: #888;">
+                            Atendimento remoto disponível
+                        </p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon">⏰</div>
+                    <div class="details">
+                        <h4>Horário de Atendimento</h4>
+                        <p>Segunda a Sexta: 9h - 18h</p>
+                        <p>Sábado: 9h - 13h</p>
+                        <p style="font-size: 0.85rem; margin-top: 0.3rem; color: #888;">
+                            Domingo: Fechado
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formulario">
+                <h3>Envie sua Mensagem</h3>
+                <div class="form-group">
+                    <label for="nome">Nome Completo *</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="assunto">Assunto *</label>
+                    <input type="text" id="assunto" name="assunto" placeholder="Qual o assunto?" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem *</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem aqui..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">📤 Enviar Mensagem</button>
+            </div>
+        </div>
+
+        <div class="redes-sociais">
+            <h3>Siga-nos nas Redes Sociais</h3>
+            <div class="social-buttons">
+                <a href="#" class="social-btn">
+                    <span class="icon">📘</span>
+                    Facebook
+                </a>
+                <a href="#" class="social-btn">
+                    <span class="icon">📸</span>
+                    Instagram
+                </a>
+                <a href="#" class="social-btn">
+                    <span class="icon">🎥</span>
+                    YouTube
+                </a>
+                <a href="#" class="social-btn">
+                    <span class="icon">🐦</span>
+                    Twitter
+                </a>
+                <a href="#" class="social-btn">
+                    <span class="icon">📌</span>
+                    Pinterest
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sabores do Mundo - Blog de Gastronomia</p>
+        <p>Desenvolvido para fins educacionais - AOP2</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+        </div>
+    </footer>
+</body>
+</html>
